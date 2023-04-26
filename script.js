@@ -38,11 +38,10 @@ function shuffle(array) {
 
 function iniciar(){
 
-    localStorage.setItem("ultimo-pressionamento", Date.now());
-  
-  // Desabilitar o botão por 5 minutos
+  localStorage.setItem("ultimo-pressionamento", Date.now());
   meuBotao.disabled = true;
-  paragrafo.classList.remove("sumir");
+  
+
   setTimeout(function() 
   { meuBotao.disabled = false;
     paragrafo.classList.add("sumir");
@@ -61,6 +60,7 @@ function iniciar(){
 
     setTimeout(function(){
 
+        paragrafo.classList.remove('sumir')
         contadorMinas.classList.remove('sumir');
         contadorTentativas.classList.remove('sumir');
         atencao.classList.remove('sumir');
