@@ -68,7 +68,7 @@ function iniciar(){
         carregar.classList.add('sumir');
         carregar.classList.add('c-loader');
         link.classList.remove('sumir')
-
+        paragrafo1.classList.add("sumir");
         var listaDeEle = document.getElementsByClassName('grid-item');
         var listaEm = shuffle(listaDeEle);
     
