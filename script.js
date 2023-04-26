@@ -1,4 +1,4 @@
-var tempoMinimo = 5*60*1000;
+var tempoMinimo = 10000;
 var meuBotao = document.getElementById("btn");
 var paragrafo = document.getElementById("timeout");
 var ultimoPressionamento = localStorage.getItem("ultimo-pressionamento");
