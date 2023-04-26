@@ -1,3 +1,23 @@
+var tempoMinimo = 5*60*1000;
+var meuBotao = document.getElementById("btn");
+var paragrafo = document.getElementById("timeout");
+var ultimoPressionamento = localStorage.getItem("ultimo-pressionamento");
+
+if (ultimoPressionamento !== null) {
+    var tempoDecorrido = Date.now() - Number(ultimoPressionamento);
+    if (tempoDecorrido < tempoMinimo) {
+      // Desabilitar o botão se ainda não tiver passado tempo suficiente
+      meuBotao.disabled = true;
+      paragrafo.classList.remove("sumir");
+      
+      // Agendar a reativação do botão após o tempo mínimo
+      setTimeout(function() {
+        meuBotao.disabled = false;
+        paragrafo.classList.add("sumir");
+      }, tempoMinimo - tempoDecorrido);
+    }
+  }
+
 function shuffle(array) {
     var m = array.length, t, i;
   
@@ -18,7 +38,14 @@ function shuffle(array) {
 
 function iniciar(){
 
-    
+    localStorage.setItem("ultimo-pressionamento", Date.now());
+  
+  // Desabilitar o botão por 5 minutos
+  meuBotao.disabled = true;
+  setTimeout(function() 
+  { meuBotao.disabled = false;
+    }, tempoMinimo);
+
     paragrafo1 = document.getElementById('iaBusca');
     carregar = document.getElementById('carregar');
 
