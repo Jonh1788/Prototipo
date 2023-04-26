@@ -72,8 +72,8 @@ function iniciar(){
         var listaDeEle = document.getElementsByClassName('grid-item');
         var listaEm = shuffle(listaDeEle);
     
-        var imagemY = "bomba.svg";
-        var imagemX = "diamante.svg"
+        var imagemY = "images/bomba.svg";
+        var imagemX = "images/diamante.svg"
     
         var vezesImagemX = 5;
         var contadorImagemX = 0;
