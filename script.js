@@ -1,4 +1,4 @@
-var tempoMinimo = 10000;
+var tempoMinimo = 15000;
 var meuBotao = document.getElementById("btn");
 var paragrafo = document.getElementById("timeout");
 var ultimoPressionamento = localStorage.getItem("ultimo-pressionamento");
@@ -42,8 +42,10 @@ function iniciar(){
   
   // Desabilitar o botão por 5 minutos
   meuBotao.disabled = true;
+  paragrafo.classList.remove("sumir");
   setTimeout(function() 
   { meuBotao.disabled = false;
+    paragrafo.classList.add("sumir");
     }, tempoMinimo);
 
     paragrafo1 = document.getElementById('iaBusca');
